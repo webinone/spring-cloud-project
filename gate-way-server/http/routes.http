@@ -1,0 +1,29 @@
+#### 라우팅 목록 보기
+GET localhost:8080/actuator/gateway/routes
+Content-Type: application/json
+
+
+#### 라우터 추가
+POST localhost:8080/actuator/gateway/routes/ms1
+Content-Type: application/json
+
+{
+  "predicate": "Paths: [/ms1/**]",
+  "filters": [],
+  "uri": "http://localhost:8081",
+  "order": 0
+}
+
+### 라우터 refresh
+POST localhost:8080/actuator/gateway/refresh
+Content-Type: application/json
+
+
+#### 글로벌 필터 목록
+GET localhost:8080/actuator/gateway/globalfilters
+Content-Type: application/json
+
+
+#### 특정 라우터 필터 목록
+GET localhost:8080/actuator/gateway/routefilters/{id}
+Content-Type: application/json
